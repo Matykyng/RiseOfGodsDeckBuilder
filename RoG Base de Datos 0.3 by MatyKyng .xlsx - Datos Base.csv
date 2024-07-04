@@ -1,0 +1,70 @@
+#,Nombre,Planeta,Tipo,ATK,DEF,Coste Faccion,Coste Generico,Caja de Habilidades,Rareza,Cant. Precon
+1,Sello Júpiter,Júpiter,Sello,n/a,n/a,0,0,,Sello,15
+2,Colita de Algodon,Júpiter,Criatura,0,2,1,0,La primera vez que te veo jugar un Sello de Júpiter creo una Zanahoria en la mano.,Rara,2
+3,"Danny, El Quokka",Júpiter,Criatura,2,1,1,0,"Cuando invocas una criatura, le otorgo +1/+0",Rara,2
+4,Monaguillo Hurón,Júpiter,Criatura,1,1,1,0,Asalto: Invoco un Querubín alrededor mío.,Común,2
+5,Maestro Gasu,Júpiter,Criatura,0,2,2,0,Vínculo. Inicio del turno: Otorgo +1/+1 a la criatura vinculada.,Rara,2
+6,Ricky El Topo,Júpiter,Criatura,2,1,2,0,Asalto: Revelo una carta de la mano y reduzco su coste en 1.,Rara,2
+7,Maestro Otem,Júpiter,Criatura,4,3,1,2,Ataque rápido,Épica,1
+8,Comerciante de Bambu,Júpiter,Criatura,3,3,2,1,Comerciable. Asalto: Silencio una criatua alrededor mio. Mejora: Silencio 2 criaturas,Épica,1
+9,"Pietr, Maestro Rhino",Júpiter,Criatura,3,3,3,1,Asalto: Curo 2 puntos de vida a una criatura o jugador y creo una Cebolla en la mano.,Rara,3
+10,Maestro Orx,Júpiter,Criatura,4,5,2,2,No puede ser objetivo de magias,Épica,1
+11,Monje Banju,Júpiter,Criatura,2,5,2,2,(4) Aturdo una criatura enemiga.,Común,1
+12,"Perez, El Perezoso",Júpiter,Criatura,0,4,2,2,Vínculo. Asalto: Aturdo a una criatura enemiga hasta abandonar el campo.,Rara,
+13,Padre Real,Júpiter,Criatura,4,4,3,2,(1) Otorgo +1/+1 a una criatura. (2) Otorgo Regeneración a una criatura.,Común,
+14,"Dako, Sumo Pontifice",Júpiter,Criatura,6,5,3,3,Asalto: Inflijo 6 de daño a una criatura alrededor mío.,Épica,1
+15,Elegido de Júpiter,Júpiter,Criatura,7,7,4,3,(5) Revivo una criatura en un casillro adyacente y le otorgo +4/+4. Es un Token. Solo puedo utilizar esta habilidad una vez por partida.,Legendaria,1
+16,Gorlan,Júpiter,Criatura,5,8,5,3,Asalto: Invoco 3 Querubines alrededor mio y le otorgo 2+/2+ a todas las criaturas aliadas cercanas.,Legendaria,
+17,Querubín,Júpiter,Criatura,0,1,1,0,"Si un aliado fuese a ser atacado, puedo sacrificarme para anular dicho ataque.",Token,3
+18,Veganismo y Oración,Júpiter,Magia Lenta,n/a,n/a,2,2,Cura 4 puntos de vida a un jugador y roba 2 cartas.,Épica,2
+19,Oda a Dios,Júpiter,Magia Lenta,n/a,n/a,3,3,Otorga +3/+3 a todas las criaturas aliadas este turno.,Épica,1
+20,Extasis Divino,Júpiter,Magia Rápida,n/a,n/a,1,1,Otorga +2/+2 a una criatura aliada hasta el final del turno.,Común,2
+21,No Eres Digno!,Júpiter,Magia Rápida,n/a,n/a,3,0,Puedes usar esta carta en respuesta a un ataque y mueve a todas las criaturas enemigas 2 casilleros hacia atrás.,Épica,1
+22,Cebolla,Júpiter,Magia Lenta,n/a,n/a,1,1,Inflige 2 puntos de daño a una criatura,Token,2
+23,Zanahoria,Júpiter,Magia Lenta,n/a,n/a,1,2,Selecciona una: -Cura 3 puntos de vida a una criatura o jugador. -Roba 2 cartas.,Token,2
+24,Sello Neptuno,Neptuno,Sello,n/a,n/a,0,0,,Sello,15
+25,Errante Profundo,Neptuno,Criatura,2,1,1,0,Toque Mortal,Común,1
+26,Arrecife Movil,Neptuno,Criatura,2,1,1,1,Asalto: Inflijo 2 de daño a una criatura enemigaalrededor mío.,Rara,2
+27,Orador de Midas,Neptuno,Criatura,2,1,2,0,Asalto: Creo un Cofre Codicia en la mano.,Rara,3
+28,Arrecidaña,Neptuno,Criatura,3,2,2,1,Asalto: Inflijo 3 de daño a la ciatura delante de mi.,Rara,2
+29,Monarca Astral,Neptuno,Criatura,1,3,2,1,Asalto: Creo un Cofre Codicia o un Cofre Pesado en la mano. (3): Revelo la mano del oponente.,Épica,2
+30,Retoño de Cthulhu,Neptuno,Criatura,2,3,1,2,Asalto: Inflijo Enfermedad 1 a una criatura alrededor mio.,Rara,3
+31,Alazul,Neptuno,Criatura,1,4,3,1,"(3): Inflijo Enfermedad 1 a una criatura. Si he activado esta habilidad 3 veces, otorgo al jugador enemigo: Inicio de turno: Pierde 2 puntos de vida.",Épica,1
+32,Geizhar,Neptuno,Criatura,3,4,2,2,"Asalto: Aplico Enfermedad 1 a una criatura, luego aumento toda la Enfermedad del campo en 1 punto.",Épica,1
+33,Tesorero James,Neptuno,Criatura,2,4,2,2,"Toque Mortal. Cuando invocas un Cofre Codicia, inflijo 1 punto de daño a un jugador. Cuando invocas un Cofre Pesado, inflijo 2.",Épica,1
+34,"Averno, El Antiguo",Neptuno,Criatura,4,4,3,3,Asalto: Invoco un Cofre Codicia a mi izquierda y uno a mi derecha.,Épica,1
+35,Elegida de Neptuno,Neptuno,Criatura,2,7,4,3,"Escudo Mágico. Asalto: Creo un Cofre Codicia y un Cofre Pesado en la mano. Cada vez que un Cofre es jugado, gano +1/+1.",Legendaria,1
+36,Kraken,Neptuno,Criatura,6,10,4,6,Caida libre. Asalto: Aniquilo todo alrededor mio y pierdo 2 puntos de vida por cada aniquilacion causada.,Legendaria,
+37,Templo de R'lyeh,Neptuno,Estructura,n/a,3,2,1,1- Aturde a todas las criaturas con 3 puntos de ataque o mas. Sse pueden pagar 4 sellos para anular este efecto por un turno. 2- Aturde a todas las criaturas. Se pueden pagar 6 sellos para anular este efecto por un turno.,Épica,
+38,Tifon Rafaga,Neptuno,Magia Rápida,n/a,n/a,0,0,Sólo puedes usar esta carta si jugaste al menos 1 Sello de Neptuno. Mueve una criatura un casillero.,Común,
+39,Ecos de Gruta,Neptuno,Magia Lenta,n/a,n/a,2,1,Selecciona una: -Invoca un Token 2/1 con Cargar. -Invoca un toquen 1/4 con Provocar.,Rara,2
+40,Pesadilla,Neptuno,Magia Lenta,n/a,n/a,2,2,Sacrifica una criatura aliada para destruir una enemiga.,Rara,2
+41,Avaricia,Neptuno,Magia Lenta,n/a,n/a,3,3,Invoca 3 Cofres Codicia con Caida Libre.,Legendaria,
+42,Peste de Alquitran,Neptuno,Magia Lenta,n/a,n/a,3,3,Inflige Enfermedad 3 a todo el campo.,Épica,1
+43,Profecia Maldita,Neptuno,Magia Lenta,n/a,n/a,2,1,Sacrifica una criatura para adivinar 3. Selecciona una y róbala. Mezcla el resto.,Común,2
+44,Cofre Codicia,Neptuno,Criatura,1,1,1,0,"Al invocarme, robo una carta.",Token,4
+45,Cofre Pesado,Neptuno,Criatura,3,2,2,1,Asalto: Aturdo a la criatura enemiga delante de mi.,Token,2
+46,Jirairama,Júpiter,Criatura,3,4,3,1,Provocar. Últimos suspiro: curo 4 puntos de vida a un jugador e inflijo 3 puntos de daño a otro.,Legendaria,
+47,Lodo Arcaico,Neptuno,Artefacto?,n/a,n/a,2,0,La criatura equipada queda aturdida. Al inicio de tu turno puedes pagar 1 Sello de Neptuno para volver a activar este efecto.,Legendaria,
+48,Sello Pluton,Plutón,Sello,n/a,n/a,0,0,,Sello,15
+49,Ruego Oculto,Plutón,Criatura,1,1,1,0,Último suspiro: juego un Sello de Pluton de tu mazo en el campo. Entra girado.,Rara,
+50,Cultista Sacrilego,Plutón,Criatura,2,2,2,0,Último suspiro: Roba una carta.,Rara,
+51,Arlequin Fantasma,Plutón,Criatura,2,2,2,0,Puñalada1. (2) Puedo moverme a cualquier casillero disponible.,Rara,
+52,El Ilusionista,Plutón,Criatura,3,3,1,2,"Último suspiro: Arrojo una moneda. Si es cara, robo una carta. Si es seca, descarto una carta al azar de la carta del oponente.",Común,
+53,Gomushi,Plutón,Criatura,4,2,2,1,"Ataque Rapido. Al atacar: si destruyo una criatura, descarto la siguiente carta del mazo del oponente.",Épica,
+54,El Murmurador,Plutón,Criatura,3,2,3,1,"Puedes pagar el coste de una criatura usando cualquier tipo de sello para revivirla con 1 punto de vida alrededor mio. Es un Token. Luego de usar esta habilidad, me silencio.",Épica,
+55,"Fetch, El Carcelero",Plutón,Criatura,3,3,3,2,Asalto: Revelo la mano del oponente. Selecciono una carta y la atrapo.,Épica,
+56,Nether,Plutón,Criatura,4,4,3,2,"Asalto: Descarto una carta al azar de la mano del oponente. Luego, revelo la siguiente carta de su mazo. Si comparten el mismo tipo, tambien la descarto.",Común,
+57,"Pluton, Dios Oscuro",Plutón,Criatura,4,4,4,1,Asalto: Mezclo un Señor de las Tinieblas en el mazo. Luego robo 1 carta.,Legendaria,
+58,Elegido de Pluton,Plutón,Criatura,4,6,4,2,"(4) Robo una carta y la revelo. El oponente descarta cartas de la parte superior de su mazo o de su mano en base al coste de la carta revelada. Si no fuera a tener cartas en la mano, pierde autamaticamente esa cantidad de vida.",Legendaria,
+59,Inferno,Plutón,Magia Lenta,n/a,n/a,0,0,Gasta todos tus sellos de Pluton para usarme. Inflijo esa cantidad de daño a todas las criaturas de tu lado del campo. Ambos jugadores descartan 2.,Legendaria,
+60,Desde Sacrilegico,Plutón,Estructura,n/a,3,2,1,"1- Ambos jugadores roban una carta, el oponente descarta 1. 2- Roba 2 cartas. El oponente roba 1 y descarta 2. 3- Olvido una criatura e inflijo 5 puntos de daño a otra.",Rara,
+61,Cañon de Zagh,Plutón,Estructura,n/a,4,3,1,"Escudo mágico. Asalto: Juega un Sello de Pluton de tu mazo en el campo. Entra girado. Cadavez que el oponente descarte por un efecto, pierde 2 puntos de vida.",Legendaria,
+62,Ratonera,Plutón,Magia Lenta,n/a,n/a,2,1,"El oponente comienza su siguiente turno con un sello girado. Elige si descartar la primera, segunda o tercera carta del mazo del oponente.",Común,
+63,Informacion Privilegiada,Plutón,Magia Lenta,n/a,n/a,3,1,Sobrecarga 1. Revela la mano del oponente. Selecciona una carta y descartala.,Común,
+64,Artimaña Vil,Plutón,Magia Lenta,n/a,n/a,3,2,Selecciona una criatura y transformala en un token 1/1.,Épica,
+65,Robo de Alma,Plutón,Magia Lenta,n/a,n/a,3,3,Revela la mano del oponente. Roba una carta y reduce su coste en 1. Puedes usar la carta robada con cualquier tipo de sello.,Épica,
+66,Señor de las Tinieblas,Plutón,Criatura,0,1,5,5,"Asalto: Robo 3 cartas. El oponente descarta 3 cartas de su mano al azar. Inflijo 3 de daño a todo el campo. Luego de que mi efecto de asalto se aplique, vuelvo al mazo y mezcla.",Token,
+67,Chasquido,Plutón,Magia Rápida,n/a,n/a,1,0,"Inflige 1 de daño a una criatura. Si muere, roba una carta. El oponente puede descartar una de su mano para anular este efecto.",Común,
+68,Demagogia,Plutón,Magia Rápida,n/a,n/a,2,1,Anula instantaneamente el efecto de una criatura o una magia. Tu oponente puede pagar 4 sellos para anular este efecto.,Rara,
+69,Traicion,Plutón,Magia Rápida,n/a,n/a,2,1,"Puedes usar esta carta en respuesta a un ataque enemigo. Anula dicho ataque y le inflige daño a la criatura atacante igual a sus puntos de ataque. El daño que supere su vida, lo recibe el oponente.",Rara,
