@@ -1,6 +1,5 @@
 import flet as ft
 import csv
-import Cython
 
 def main(page: ft.Page):
     page.title = "Creador de Mazos TCG"
