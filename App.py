@@ -1,5 +1,6 @@
 import flet as ft
 import csv
+import Cython
 
 def main(page: ft.Page):
     page.title = "Creador de Mazos TCG"
@@ -27,13 +28,11 @@ def main(page: ft.Page):
         page.update()
 
     def add_to_deck(card):
-        # Buscar si la carta ya está en el mazo
         for item in deck_cards.controls:
             if item.controls[0].value == f"{card['Nombre']} - {card['Tipo']}":
                 increase_card_count(item.controls[1].controls[2])
                 return
         
-        # Si no está en el mazo, añadirla
         deck_cards.controls.append(
             ft.Row([
                 ft.Text(f"{card['Nombre']} - {card['Tipo']}"),
@@ -102,7 +101,6 @@ def main(page: ft.Page):
         page.set_clipboard(deck_text)
         page.show_snack_bar(ft.SnackBar(content=ft.Text("Mazo copiado al portapapeles")))
 
-    # Poblar la lista de cartas disponibles
     for card in cards:
         available_cards.controls.append(
             ft.Row([
@@ -112,7 +110,6 @@ def main(page: ft.Page):
             ])
         )
 
-    # Crear el layout
     page.add(
         ft.Row([
             ft.Text("Creador de Mazos", size=30, weight="bold"),
