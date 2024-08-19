@@ -1,128 +1,88 @@
-import flet as ft
+import reflex as rx
 import csv
 
-def main(page: ft.Page):
-    page.title = "Creador de Mazos TCG"
-    page.theme_mode = "dark"
+class Card(rx.Base):
+    name: str
+    type: str
+    details: dict
 
-    # Cargar las cartas desde el CSV
-    cards = []
-    with open('RoG Base de Datos 0.3 by MatyKyng .xlsx - Datos Base.csv', newline='', encoding='utf-8') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            cards.append(row)
-
-    # Lista de cartas disponibles
-    available_cards = ft.ListView(expand=1, spacing=10, padding=20)
+class State(rx.State):
+    cards: list[Card] = []
+    deck: list[tuple[Card, int]] = []
     
-    # Lista de cartas en el mazo
-    deck_cards = ft.ListView(expand=1, spacing=10, padding=20)
+    def __init__(self):
+        super().__init__()
+        self.load_cards()
 
-    # Contador de cartas en el mazo
-    deck_count = ft.Text("Cartas en el mazo: 0", size=20, weight="bold")
+    def load_cards(self):
+        with open('RoG Base de Datos 0.3 by MatyKyng .xlsx - Datos Base.csv', newline='', encoding='utf-8') as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                self.cards.append(Card(name=row['Nombre'], type=row['Tipo'], details=row))
 
-    def update_deck_count():
-        count = sum(int(item.controls[1].controls[1].value) for item in deck_cards.controls)
-        deck_count.value = f"Cartas en el mazo: {count}"
-        page.update()
-
-    def add_to_deck(card):
-        for item in deck_cards.controls:
-            if item.controls[0].value == f"{card['Nombre']} - {card['Tipo']}":
-                increase_card_count(item.controls[1].controls[2])
+    def add_to_deck(self, card: Card):
+        for i, (deck_card, count) in enumerate(self.deck):
+            if deck_card.name == card.name:
+                self.deck[i] = (deck_card, count + 1)
                 return
-        
-        deck_cards.controls.append(
-            ft.Row([
-                ft.Text(f"{card['Nombre']} - {card['Tipo']}"),
-                ft.Row([
-                    ft.IconButton(ft.icons.REMOVE, on_click=decrease_card_count),
-                    ft.Text("1"),
-                    ft.IconButton(ft.icons.ADD, on_click=increase_card_count),
-                    ft.IconButton(ft.icons.DELETE, on_click=lambda e, c=card: remove_from_deck(c)),
-                ]),
-                ft.IconButton(ft.icons.VISIBILITY, on_click=lambda _, c=card: view_card(c))
-            ])
+        self.deck.append((card, 1))
+
+    def remove_from_deck(self, card: Card):
+        self.deck = [(c, count) for c, count in self.deck if c.name != card.name]
+
+    def increase_card_count(self, card: Card):
+        self.deck = [(c, count + 1 if c.name == card.name else count) for c, count in self.deck]
+
+    def decrease_card_count(self, card: Card):
+        self.deck = [(c, count - 1 if c.name == card.name and count > 1 else count) for c, count in self.deck]
+        self.deck = [(c, count) for c, count in self.deck if count > 0]
+
+    def copy_deck_to_clipboard(self):
+        deck_list = [f"{count}x {card.name}" for card, count in self.deck]
+        return "\n".join(deck_list)
+
+def card_view(card: Card):
+    return rx.vstack(
+        rx.text(f"{card.name} - {card.type}"),
+        rx.hstack(
+            rx.button("Añadir", on_click=lambda: State.add_to_deck(card)),
+            rx.button("Ver", on_click=rx.window_alert(str(card.details))),
         )
-        update_deck_count()
-
-    def increase_card_count(e):
-        row = e.control.parent
-        count_text = row.controls[1]
-        count = int(count_text.value)
-        count_text.value = str(count + 1)
-        update_deck_count()
-
-    def decrease_card_count(e):
-        row = e.control.parent
-        count_text = row.controls[1]
-        count = int(count_text.value)
-        if count > 1:
-            count_text.value = str(count - 1)
-            update_deck_count()
-        else:
-            remove_from_deck(row.parent.controls[0].value.split(" - ")[0])
-
-    def remove_from_deck(card):
-        for item in deck_cards.controls:
-            if item.controls[0].value.startswith(card['Nombre'] if isinstance(card, dict) else card):
-                deck_cards.controls.remove(item)
-                break
-        update_deck_count()
-
-    def view_card(card):
-        def close_dlg(e):
-            dlg.open = False
-            page.update()
-
-        content = ft.Column([ft.Text(f"{key}: {value}") for key, value in card.items() if value])
-        dlg = ft.AlertDialog(
-            title=ft.Text(card['Nombre']),
-            content=content,
-            actions=[
-                ft.TextButton("Cerrar", on_click=close_dlg),
-            ],
-            actions_alignment=ft.MainAxisAlignment.END,
-        )
-
-        page.dialog = dlg
-        dlg.open = True
-        page.update()
-
-    def copy_deck_to_clipboard(e):
-        deck_list = []
-        for item in deck_cards.controls:
-            card_name = item.controls[0].value.split(" - ")[0]
-            card_count = item.controls[1].controls[1].value
-            deck_list.append(f"{card_count}x {card_name}")
-        
-        deck_text = "\n".join(deck_list)
-        page.set_clipboard(deck_text)
-        page.show_snack_bar(ft.SnackBar(content=ft.Text("Mazo copiado al portapapeles")))
-
-    for card in cards:
-        available_cards.controls.append(
-            ft.Row([
-                ft.Text(f"{card['Nombre']} - {card['Tipo']}"),
-                ft.IconButton(ft.icons.ADD, on_click=lambda _, c=card: add_to_deck(c)),
-                ft.IconButton(ft.icons.VISIBILITY, on_click=lambda _, c=card: view_card(c))
-            ])
-        )
-
-    page.add(
-        ft.Row([
-            ft.Text("Creador de Mazos", size=30, weight="bold"),
-            deck_count
-        ], alignment=ft.MainAxisAlignment.SPACE_BETWEEN),
-        ft.Row(
-            [
-                ft.Column([ft.Text("Cartas Disponibles"), available_cards], expand=1),
-                ft.VerticalDivider(width=1),
-                ft.Column([ft.Text("Mazo"), deck_cards], expand=1),
-            ],
-            expand=True,
-        ),
-        ft.ElevatedButton("Copiar Mazo", on_click=copy_deck_to_clipboard)
     )
 
-ft.app(target=main)
+def deck_card_view(card: Card, count: int):
+    return rx.hstack(
+        rx.text(f"{card.name} - {card.type}"),
+        rx.text(str(count)),
+        rx.button("-", on_click=lambda: State.decrease_card_count(card)),
+        rx.button("+", on_click=lambda: State.increase_card_count(card)),
+        rx.button("Eliminar", on_click=lambda: State.remove_from_deck(card)),
+    )
+
+def index():
+    return rx.vstack(
+        rx.heading("Creador de Mazos TCG"),
+        rx.hstack(
+            rx.vstack(
+                rx.heading("Cartas Disponibles"),
+                rx.vstack(
+                    rx.foreach(State.cards, card_view)
+                )
+            ),
+            rx.vstack(
+                rx.heading("Mazo"),
+                rx.text(f"Cartas en el mazo: {sum(count for _, count in State.deck)}"),
+                rx.vstack(
+                    rx.foreach(State.deck, lambda item: deck_card_view(item[0], item[1]))
+                ),
+                rx.button(
+                    "Copiar Mazo", 
+                    on_click=rx.set_clipboard(State.copy_deck_to_clipboard())
+                )
+            )
+        )
+    )
+
+app = rx.App(state=State)
+app.add_page(index)
+app._compile
